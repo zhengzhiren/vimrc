@@ -9,10 +9,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'elzr/vim-json'
 Plugin 'Mark'
 Plugin 'The-NERD-tree'
 Plugin 'taglist.vim'
 Plugin 'a.vim'
+Plugin 'Blackrush/vim-gocode'
 
 
 " All of your Plugins must be added before the following line
@@ -64,7 +66,7 @@ if exists("g:did_load_filetypes")
 	filetype off
 	filetype plugin indent off
 endif
-set runtimepath+=/usr/local/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
+set runtimepath+=/home/zhengzr/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
 filetype plugin indent on
 syntax on
 "autocmd BufWritePre *.go :Fmt
