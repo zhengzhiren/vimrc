@@ -33,6 +33,22 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+" golang
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+if exists("g:did_load_filetypes")
+	filetype off
+	filetype plugin indent off
+endif
+set runtimepath+=/home/zhengzr/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
+filetype plugin indent on
+syntax on
+"autocmd BufWritePre *.go :Fmt
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+
+
+colorscheme evening
 set ruler
 
 set tabstop=4
@@ -46,6 +62,8 @@ set laststatus=2
 
 " highlight search
 set hlsearch        
+set cursorline
+highlight CursorLine term=none cterm=none ctermbg=245
 
 " <leader>
 let mapleader = ","    
@@ -58,19 +76,6 @@ if has("gui_running")
 		au GUIEnter * simalt ~x
 	endif
 endif
-
-" golang
-" Some Linux distributions set filetype in /etc/vimrc.
-" Clear filetype flags before changing runtimepath to force Vim to reload them.
-if exists("g:did_load_filetypes")
-	filetype off
-	filetype plugin indent off
-endif
-set runtimepath+=/home/zhengzr/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
-filetype plugin indent on
-syntax on
-"autocmd BufWritePre *.go :Fmt
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 
 """"""""""""""""""""""""""""""
