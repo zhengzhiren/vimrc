@@ -7,7 +7,9 @@ function update()
 {
 	echo Updating \"$HOME/.vimrc\"
 	cd $THIS_DIR; git pull
-	cp $HOME/.vimrc $HOME/.vimrc.bak #make a backup
+    if [ -f $HOME/.vimrc ]; then
+        cp $HOME/.vimrc $HOME/.vimrc.bak #make a backup
+    fi  
 	cp $THIS_DIR/.vimrc $HOME/.vimrc
 }
 
