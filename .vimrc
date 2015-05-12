@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'elzr/vim-json'
 Plugin 'Mark'
 Plugin 'The-NERD-tree'
+Plugin 'The-NERD-Commenter'
 Plugin 'taglist.vim'
 Plugin 'a.vim'
 "Plugin 'Blackrush/vim-gocode'
@@ -48,7 +49,8 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 
 
-colorscheme evening
+"colorscheme evening
+colorscheme desert
 set ruler
 
 set tabstop=4
@@ -63,7 +65,7 @@ set laststatus=2
 " highlight search
 set hlsearch        
 set cursorline
-highlight CursorLine term=none cterm=none ctermbg=245
+highlight CursorLine term=none cterm=none ctermbg=238
 
 " <leader>
 let mapleader = ","    
